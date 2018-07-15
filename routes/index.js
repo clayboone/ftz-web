@@ -19,16 +19,17 @@ router.get('/', function(req, res, next) {
  * @param {Function} callback called with (meminfoObject)
  */
 function getMeminfo(callback) {
-  let meminfoString = "";
+  // let meminfoString = "";
 
   fs.readFile('/proc/meminfo', (err, data) => {
     if (err) {
       throw err;
     }
 
-    meminfoString = data.toString().split(/kb/ig);
-    console.log(data.toString());
-    callback(meminfoString);
+    // meminfoString = data.toString().split(/kb/ig);
+    // console.log(data.toString());
+    // callback(meminfoString);
+    callback(data.toString());
   });
 }
 
