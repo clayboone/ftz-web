@@ -10,7 +10,9 @@ router.get('/', function(req, res, next) {
     stdoutData.push(data)
   });
 
-  res.render('index', { stdout: stdoutData });
+  free.on('close', (exitCode) => {
+    res.render('index', { stdout: stdoutData });
+  });
 });
 
 module.exports = router;
