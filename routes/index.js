@@ -26,7 +26,7 @@ function getMeminfo(callback) {
       throw err;
     }
 
-    meminfoString = data;
+    meminfoString = data.toString();
     callback(meminfoString);
   });
 }
