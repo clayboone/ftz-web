@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   // const meminfo = getMeminfo();
   // res.render('index', { stdout: meminfo });
 
-  getMeminfo((err, data) => {
+  getMeminfo((data) => {
     console.log("data is:", data);
     res.render('index', { stdout: data });
   })
@@ -19,17 +19,13 @@ router.get('/', function(req, res, next) {
  * @param {Function} callback called with (meminfoObject)
  */
 function getMeminfo(callback) {
-  // let meminfoString = "";
-
   fs.readFile('/proc/meminfo', (err, data) => {
     if (err) {
       throw err;
     }
 
-    // meminfoString = data.toString().split(/kb/ig);
-    // console.log(data.toString());
-    // callback(meminfoString);
-    callback(data.toString());
+    let meminfoString = data.toString();
+    callback(meminfoString);
   });
 }
 
