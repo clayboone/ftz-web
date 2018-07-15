@@ -26,7 +26,7 @@ function getMeminfo(callback) {
       throw err;
     }
 
-    meminfoString = data.toString();
+    meminfoString = data.toString().split(/kb/i);
     callback(meminfoString);
   });
 }
