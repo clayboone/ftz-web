@@ -27,7 +27,7 @@ function getMeminfo(callback) {
     }
 
     meminfoString = data.toString().split(/kb/ig);
-    console.log(data);
+    console.log(data.toString());
     callback(meminfoString);
   });
 }
