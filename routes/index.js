@@ -16,8 +16,8 @@ router.get('/', function(req, res, next) {
 function getMeminfo() {
   meminfoString = "";
   fs.readFile('/proc/meminfo', (err, data) => {
-    if (err) return err;
-    meminfoString += data;
+    // if (err) return err;
+    meminfoString.concat(data ? data : err);
   });
   return meminfoString;
 }
