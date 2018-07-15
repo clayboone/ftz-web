@@ -4,22 +4,30 @@ const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const meminfo = getMeminfo();
-  res.render('index', { stdout: meminfo });
+  // const meminfo = getMeminfo();
+  // res.render('index', { stdout: meminfo });
+
+  getMeminfo((err, data) => {
+    res.render('index', { stdout: data });
+  })
 });
 
 /**
  * Build an object with data from /proc/meminfo
  * 
- * @returns {Object} Map-type object holding data from /proc/meminfo
+ * @param {Function} callback called with (meminfoObject)
  */
-function getMeminfo() {
-  meminfoString = "";
+function getMeminfo(callback) {
+  let meminfoString = "";
+
   fs.readFile('/proc/meminfo', (err, data) => {
-    // if (err) return err;
-    meminfoString.concat(data ? data : err);
+    if (err) {
+      throw err;
+    }
+
+    meminfoString = data;
+    callback(meminfoString);
   });
-  return meminfoString;
 }
 
 /**
