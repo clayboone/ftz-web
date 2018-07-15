@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
   // res.render('index', { stdout: meminfo });
 
   getMeminfo((err, data) => {
+    console.log("data is:", data);
     res.render('index', { stdout: data });
   })
 });
