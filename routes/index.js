@@ -6,7 +6,7 @@ const fs = require('fs');
 router.get('/', function(req, res, next) {
   getMeminfo((meminfoObject) => {
     res.render('index', {
-      memFree: meminfoObject['MemFree'],
+      memFree: meminfoObject['MemTotal'] - meminfoObject['MemAvailable'],
       memTotal: meminfoObject['MemTotal']
     });
   });

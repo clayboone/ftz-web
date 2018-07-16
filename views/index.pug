@@ -2,5 +2,5 @@ extends layout
 
 block content
   h1.
-    Memory used: <em class="used-mem">#{memFree}/#{memTotal}</em>
-  progress(max="#{memTotal}", value="#{memTotal - memFree}")
+    Memory used: <em class="used-mem">#{memUsed}/#{memTotal}</em>
+  progress(max=#{memTotal}, value=#{memUsed})
