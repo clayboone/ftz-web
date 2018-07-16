@@ -7,10 +7,9 @@ router.get('/', function(req, res, next) {
   // const meminfo = getMeminfo();
   // res.render('index', { stdout: meminfo });
 
-  getMeminfo((data) => {
-    console.log("data is:", data);
-    res.render('index', { stdout: data });
-  })
+  getMeminfo((meminfoObject) => {
+    res.render('index', { meminfo: meminfoObject });
+  });
 });
 
 /**
@@ -24,29 +23,18 @@ function getMeminfo(callback) {
       throw err;
     }
 
-    let meminfoString = data.toString();
-    callback(meminfoString);
+    let meminfoObject = {};
+    data.toString().split('\n').forEach((value, index) => {
+      let key = value.split(':')[0];
+      let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
+
+      if (key.length > 0) {
+        meminfoObject[key] = val;
+      }
+    });
+
+    callback(meminfoObject);
   });
-}
-
-/**
- * Get the amount of free system memory in bytes.
- * 
- * @param meminfo {Object} meminfo object
- * @returns {Number} Positive integer or zero
- */
-function getFreeMem(meminfo) {
-  
-}
-
-/**
- * Get the total amount of system memory, used and free.
- * 
- * @param meminfo {Object} meminfo object
- * @returns {Number} Positive integer or zero
- */
-function getTotalMem(meminfo) {
-
 }
 
 module.exports = router;
