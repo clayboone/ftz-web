@@ -3,4 +3,4 @@ extends layout
 block content
   h1.
     Memory used: <em class="used-mem">#{memFree}/#{memTotal}</em>
-  progress(max="${memTotal}", value="${memTotal - memFree}")
+  progress.meminfo-progress(max='"'+${memTotal}+'"', value='"'+${memTotal - memFree}+'"')
