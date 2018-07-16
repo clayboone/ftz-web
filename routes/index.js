@@ -5,7 +5,10 @@ const fs = require('fs');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   getMeminfo((meminfoObject) => {
-    res.render('index', { memFree: meminfoObject['MemFree']});
+    res.render('index', {
+      memFree: meminfoObject['MemFree'],
+      memTotal: meminfoObject['MemTotal']
+    });
   });
 });
 
