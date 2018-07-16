@@ -4,9 +4,6 @@ const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // const meminfo = getMeminfo();
-  // res.render('index', { stdout: meminfo });
-
   getMeminfo((meminfoObject) => {
     res.render('index', { meminfo: meminfoObject });
   });
@@ -25,6 +22,9 @@ function getMeminfo(callback) {
 
     let meminfoObject = {};
     data.toString().split('\n').forEach((value, index) => {
+
+      console.log('typeof value:', typeof value,'\nvalue:', value);
+
       let key = value.split(':')[0];
       let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
 
