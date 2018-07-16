@@ -22,7 +22,6 @@ function getMeminfo(callback) {
 
     let meminfoObject = {};
     data.toString().split('\n').forEach((value, index) => {
-
       if (value.length > 0) {
         let key = value.split(':')[0];
         let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
