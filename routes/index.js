@@ -23,12 +23,12 @@ function getMeminfo(callback) {
     let meminfoObject = {};
     data.toString().split('\n').forEach((value, index) => {
 
-      console.log('index: ', index, ': typeof value:', typeof value,'value: "' + value + '"');
+      if (value.length > 0) {
+        console.log('index: ', index, ': typeof value:', typeof value,'value: "' + value + '"');
 
-      let key = value.split(':')[0];
-      let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
+        let key = value.split(':')[0];
+        let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
 
-      if (key.length > 0) {
         meminfoObject[key] = val;
       }
     });
