@@ -1,6 +1,8 @@
+let counter = 0;
+
 setTimeout(() => {
-    this.counter++;
+    counter++;
     const tag = document.getElementById("counter");
 
-    tag.innerHTML = "<em>" + this.counter + "</em>";
+    tag.innerHTML = "<em>" + counter.toString() + "</em>";
 }, 500);
