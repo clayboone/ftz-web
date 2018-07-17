@@ -17,7 +17,8 @@ setInterval(() => {
 
     xhttp.onreadystatechange = function() {
         tag.innerHTML = this.response.toString();
+        console.log(this.response);
     };
 
-    console.log(temp);
+    // console.log(temp);
 })();
