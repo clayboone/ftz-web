@@ -6,4 +6,4 @@ setTimeout(() => {
 
     console.log(counter);
     tag.innerHTML = "<em>" + counter.toString() + "</em>";
-}, 500);
+}, 1000);
