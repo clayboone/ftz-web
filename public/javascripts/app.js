@@ -1,6 +1,6 @@
 let counter = 0;
 
-setTimeout(() => {
+setInterval(() => {
     counter++;
     const tag = document.getElementById("counter");
 
