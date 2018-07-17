@@ -1,5 +1,6 @@
-(function updateh2() {
-    tag = document.getElementById("counter");
+setTimeout(() => {
+    this.counter++;
+    const tag = document.getElementById("counter");
 
-    console.log(tag);
-})();
+    tag.innerHTML = "<em>" + this.counter.toString() + "</em>";
+}, 500);
