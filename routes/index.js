@@ -4,7 +4,7 @@ const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // do nothing
+  res.render('index');
 });
 
 /**
