@@ -4,6 +4,13 @@ const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  // do nothing
+});
+
+/**
+ * GET meminfo object.
+ */
+router.get('/api/meminfo', (req, res, next) => {
   getMeminfo((meminfoObject) => {
     res.render('index', {meminfo: meminfoObject});
   });
