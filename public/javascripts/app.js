@@ -6,4 +6,4 @@ setInterval(() => {
 
     console.log(counter);
     tag.innerHTML = "<em>" + counter.toString() + "</em>";
-}, 1000);
+}, 100);
