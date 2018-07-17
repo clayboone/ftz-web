@@ -4,41 +4,37 @@ const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { memFree: '12', memTotal: '15'});
+  getMeminfo((meminfoObject) => {
+    res.render('index', {
+      memFree: meminfoObject['MemTotal'] - meminfoObject['MemAvailable'],
+      memTotal: meminfoObject['MemTotal']
+    });
+  });
 });
 
-// router.get('/', function(req, res, next) {
-//   getMeminfo((meminfoObject) => {
-//     res.render('index', {
-//       memFree: meminfoObject['MemTotal'] - meminfoObject['MemAvailable'],
-//       memTotal: meminfoObject['MemTotal']
-//     });
-//   });
-// });
+/**
+ * Build an object with data from /proc/meminfo
+ * 
+ * @param {Function} callback called with (meminfoObject)
+ */
+function getMeminfo(callback) {
+  fs.readFile('/proc/meminfo', (err, data) => {
+    if (err) {
+      throw err;
+    }
 
-// /**
-//  * Build an object with data from /proc/meminfo
-//  * 
-//  * @param {Function} callback called with (meminfoObject)
-//  */
-// function getMeminfo(callback) {
-//   fs.readFile('/proc/meminfo', (err, data) => {
-//     if (err) {
-//       throw err;
-//     }
+    let meminfoObject = {};
+    data.toString().split('\n').forEach((value, index) => {
+      if (value.length > 0) {
+        let key = value.split(':')[0];
+        let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
 
-//     let meminfoObject = {};
-//     data.toString().split('\n').forEach((value, index) => {
-//       if (value.length > 0) {
-//         let key = value.split(':')[0];
-//         let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
+        meminfoObject[key] = val;
+      }
+    });
 
-//         meminfoObject[key] = val;
-//       }
-//     });
-
-//     callback(meminfoObject);
-//   });
-// }
+    callback(meminfoObject);
+  });
+}
 
 module.exports = router;
