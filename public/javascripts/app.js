@@ -7,3 +7,7 @@ setInterval(() => {
     console.log(counter);
     tag.innerHTML = "<em>" + counter.toString() + "</em>";
 }, 100);
+
+(function () {
+    console.log('getting meminfo...');
+})();
