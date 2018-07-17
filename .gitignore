@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# vim
+*~
+
+# compiled CSS
+public/stylesheets/*.css
