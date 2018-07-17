@@ -12,6 +12,12 @@ setInterval(() => {
     const tag = document.getElementById("meminfo");
 
     const xhttp = new XMLHttpRequest();
-    temp = xhttp.open('GET', '/api/meminfo');
+    xhttp.open('GET', '/api/meminfo');
+    xhttp.send();
+
+    xhttp.onreadystatechange = function() {
+        tag.innerHTML = this.response.toString();
+    };
+
     console.log(temp);
 })();
