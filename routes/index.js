@@ -22,20 +22,25 @@ router.get('/api/meminfo', (req, res, next) => {
  * @param {Function} callback called with (meminfoObject)
  */
 function getMeminfo(callback) {
+  let content = '';
+
   fs.readFile('/proc/meminfo', (err, data) => {
     if (err) {
       throw err;
     }
 
-    let meminfoObject = {};
-    data.toString().split('\n').forEach((value, index) => {
-      if (value.length > 0) {
-        let key = value.split(':')[0];
-        let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
+    content.concat(data.toString());
+  });
 
-        meminfoObject[key] = val.toString();
-      }
-    });
+  let meminfoObject = {};
+  content.split('\n').forEach((value, index) => {
+    if (value.length > 0) {
+      let key = value.split(':')[0];
+      let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
+
+      meminfoObject[key] = val.toString();
+    }
+  });
 
     callback(meminfoObject);
   });
