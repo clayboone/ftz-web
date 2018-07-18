@@ -13,6 +13,7 @@
         // tag.setAttribute("value", meminfo.MemTotal - meminfo.MemFree)
 
         let percentUsed = (meminfo.MemTotal - meminfo.MemFree) / meminfo.MemTotal;
+        console.log("used", percentUsed + '%');
         tag.style.width = percentUsed.toString() + '%';
     };
 })();
