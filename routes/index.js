@@ -42,8 +42,7 @@ function getMeminfo(callback) {
     }
   });
 
-    callback(meminfoObject);
-  });
+  callback(meminfoObject);
 }
 
 module.exports = router;
