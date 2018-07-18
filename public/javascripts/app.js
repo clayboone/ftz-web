@@ -1,3 +1,4 @@
+// Run on page load
 (function appMain() {
     const tag = document.getElementById("memusage");
     const xhttp = new XMLHttpRequest();
@@ -6,13 +7,12 @@
     xhttp.send();
 
     xhttp.onreadystatechange = function() {
-        meminfo = JSON.parse(this.response);
+        const meminfo = JSON.parse(this.response);
+        const percentUsed = (meminfo.MemTotal - meminfo.MemFree) / meminfo.MemTotal * 100;
 
-        // <progress> attributes
-        // tag.setAttribute("max", meminfo["MemTotal"]);
-        // tag.setAttribute("value", meminfo.MemTotal - meminfo.MemFree)
-
-        let percentUsed = (meminfo.MemTotal - meminfo.MemFree) / meminfo.MemTotal * 100;
         tag.style.width = percentUsed.toString() + '%';
     };
 })();
+
+// Also run on repeat
+setInterval(appMain, 1000);
