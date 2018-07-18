@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
  */
 router.get('/api/meminfo', (req, res, next) => {
   getMeminfo((meminfoObject) => {
-    res.render('index', {meminfo: JSON.stringify(meminfoObject)});
+    // res.render('index', {meminfo: JSON.stringify(meminfoObject)});
+    res.send(JSON.stringify(meminfoObject));
   });
 });
 
