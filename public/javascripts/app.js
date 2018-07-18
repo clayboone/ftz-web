@@ -10,7 +10,7 @@
         console.log(this.response);
         debugger
         const meminfo = JSON.parse(this.response);
-        console.logt(typeof meminfo.MemFree, meminfo.MemFree);
+        console.log(typeof meminfo.MemFree, meminfo.MemFree);
         const percentUsed = (meminfo.MemTotal - meminfo.MemFree) / meminfo.MemTotal * 100;
 
         tag.style.width = percentUsed.toString() + '%';
