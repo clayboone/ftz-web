@@ -12,8 +12,7 @@
         // tag.setAttribute("max", meminfo["MemTotal"]);
         // tag.setAttribute("value", meminfo.MemTotal - meminfo.MemFree)
 
-        let percentUsed = (meminfo.MemTotal - meminfo.MemFree) / meminfo.MemTotal;
-        console.log("used", percentUsed + '%');
+        let percentUsed = (meminfo.MemTotal - meminfo.MemFree) / meminfo.MemTotal * 100;
         tag.style.width = percentUsed.toString() + '%';
     };
 })();
