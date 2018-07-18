@@ -12,7 +12,11 @@ router.get('/', function(req, res, next) {
  */
 router.get('/api/meminfo', (req, res, next) => {
   getMeminfo((meminfoObject) => {
-    res.send(JSON.stringify(meminfoObject));
+    // res.send(JSON.stringify(meminfoObject));
+    res.send(JSON.stringify({
+      MemFree: 250,
+      MemTotal: 1000
+    }));
   });
 });
 
