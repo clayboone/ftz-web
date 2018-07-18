@@ -16,7 +16,8 @@ setInterval(() => {
     xhttp.send();
 
     xhttp.onreadystatechange = function() {
-        tag.innerHTML = this.response.toString();
+        // should be a stringified JSON object
+        tag.innerHTML = this.response;
         console.log(this.response);
     };
 
