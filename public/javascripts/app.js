@@ -12,7 +12,7 @@
 
         tag.style.width = percentUsed.toString() + '%';
     };
-})();
 
-// Also run on repeat
-setInterval(appMain, 1000);
+    // Repeat
+    setTimeout(appMain, 1000);
+})();
