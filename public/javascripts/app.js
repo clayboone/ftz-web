@@ -7,6 +7,7 @@
     xhttp.send();
 
     xhttp.onreadystatechange = function() {
+        console.log(this.response);
         const meminfo = JSON.parse(this.response);
         const percentUsed = (meminfo.MemTotal - meminfo.MemFree) / meminfo.MemTotal * 100;
 
