@@ -9,7 +9,7 @@ setInterval(() => {
 
 (function () {
     console.log('getting meminfo...');
-    const tag = document.getElementById("meminfo");
+    const tag = document.getElementById("memusage");
 
     const xhttp = new XMLHttpRequest();
     xhttp.open('GET', '/api/meminfo');
