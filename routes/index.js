@@ -33,7 +33,7 @@ function getMeminfo(callback) {
         let key = value.split(':')[0];
         let val = Number(value.split(':')[1].trim().match(/^[0-9]+/)[0]);
 
-        meminfoObject[key] = val;
+        meminfoObject[key] = val.toString();
       }
     });
 
