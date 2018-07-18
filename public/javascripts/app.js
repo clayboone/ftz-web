@@ -17,8 +17,10 @@ setInterval(() => {
 
     xhttp.onreadystatechange = function() {
         // should be a stringified JSON object
-        tag.innerHTML = this.response;
-        console.log(this.response);
+        meminfo = JSON.parse(this.response);
+
+        tag.setAttribute("max", meminfo["MemTotal"]);
+        tag.setAttribute("value", meminfo.MemTotal - meminfo.MemFree)
     };
 
     // console.log(temp);
