@@ -1,0 +1,86 @@
+body {
+  padding: 10px;
+  background-image: url("/images/tile.png");
+  background-repeat: repeat;
+  background-size: 20%;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.memory-box {
+  padding: 20px;
+  padding-top: 5px;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 4px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+#memusage-container {
+  border: 1px solid darkgray;
+  position: relative;
+}
+
+#memusage-used {
+  background-color: rgb(0, 183, 255);
+  height: 24px;
+  width: 0%;
+}
+
+#memusage-active {
+  background-color: rgb(255, 178, 40);
+  height: 24px;
+  width: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#swapusage-container {
+  border: 1px solid darkgray;
+  position: relative;
+}
+
+#swapusage-used {
+  background-color: rgb(0, 183, 255);
+  height: 24px;
+  width: 0%;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .label {
+    font-size: 1em;
+  }
+  .legend {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 0.7em;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    
+    li {
+      padding-left: 6px;
+      padding-right: 6px;
+      display: flex;
+      flex-direction: row;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .bullet {
+      width: 12px;
+      height: 12px;
+      border: 1px solid darkgray;
+      margin-right: 5px;
+    }
+    .active { background-color: rgb(255, 178, 40); }
+    .used { background-color: rgb(0, 183, 255); }
+    .free { background-color: rgba(0, 0, 0, 0); }
+  }
+}
