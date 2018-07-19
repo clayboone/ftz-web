@@ -16,12 +16,14 @@ body {
 #memusage-container {
   border: 1px solid darkgray;
   position: relative;
+  animation: getShorter 200ms both;
 }
 
 #memusage-used {
   background-color: rgb(0, 183, 255);
   height: 24px;
   width: 0%;
+  animation: getShorter 200ms both;
 }
 
 @keyframes getTaller {
@@ -30,9 +32,9 @@ body {
 }
 
 .clicked {
-  #memusage-container { animation: getTaller 400ms; animation-fill-mode: both;}
-  #memusage-active { animation: getTaller 400ms; animation-fill-mode: both;}
-  #memusage-used { animation: getTaller 400ms; animation-fill-mode: both;}
+  #memusage-container { animation: getTaller 400ms both; }
+  #memusage-active { animation: getTaller 400ms both; }
+  #memusage-used { animation: getTaller 400ms both; }
 }
 
 #memusage-active {
@@ -42,6 +44,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  animation: getShorter 200ms both;
 }
 
 #swapusage-container {
