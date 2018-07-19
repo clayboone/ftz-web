@@ -10,9 +10,8 @@
         const meminfo = JSON.parse(this.response);
 
         tag.style.width = meminfo.memUsedPercent.toString() + '%';
-        debugger
     };
 
     // Repeat
-    setTimeout(appMain, 1000);
+    setTimeout(appMain, 2000);
 })();
