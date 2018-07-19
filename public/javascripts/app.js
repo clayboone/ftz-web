@@ -1,6 +1,7 @@
 // Run on page load
 (function appMain() {
-    const tag = document.getElementById("memusage-all");
+    const memUsedTag = document.getElementById("memusage-used");
+    const memActiveTag = document.getElementById("memusage-active");
     const xhttp = new XMLHttpRequest();
 
     xhttp.open('GET', '/api/meminfo');
@@ -9,7 +10,8 @@
     xhttp.onreadystatechange = function() {
         const meminfo = JSON.parse(this.response);
 
-        tag.style.width = meminfo.memUsedPercent.toString() + '%';
+        memUsedTag.style.width = meminfo.memUsedPercent.toString() + '%';
+        memActiveTag.style.width = meminfo.memActivePercent.toString() + '%';
     };
 
     // Repeat
