@@ -1,18 +1,21 @@
 extends layout
 
 block content
-  div.memory-box
+  .memory-box
     h3 Memory usage
     p Physical:
-      div.legend-container
+      .legend-container
         ul.legend
           li.active Active
           li.used File Buffers & Cache
           li.free Free
-    div#memusage-container
-      div#memusage-used
-      div#memusage-active
+    #memusage-container
+      #memusage-used
+      #memusage-active
     p Swap:
-      div.legend#swaplegend
-    div#swapusage-container
-      div#swapusage-used
+      .legend-container
+        ul.legend
+          li.used File Buffers & Cache
+          li.free Free
+    #swapusage-container
+      #swapusage-used
