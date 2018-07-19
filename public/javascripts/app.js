@@ -1,6 +1,6 @@
 // Run on page load
 (function appMain() {
-    const tag = document.getElementById("memusage");
+    const tag = document.getElementById("memusage-all");
     const xhttp = new XMLHttpRequest();
 
     xhttp.open('GET', '/api/meminfo');
