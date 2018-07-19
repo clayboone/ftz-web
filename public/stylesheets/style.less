@@ -26,11 +26,21 @@ body {
   animation: getShorter 200ms both;
 }
 
+#memusage-active {
+  background-color: rgb(255, 178, 40);
+  height: 24px;
+  width: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: getShorter 200ms both;
+}
 
 @keyframes getTaller {
   from {height: 24px;}
   to {height: 95px;}
 }
+
 @keyframes getShorter {
   from {height: 95px;}
   to {height: 24px;}
@@ -40,16 +50,6 @@ body {
   #memusage-container { animation: getTaller 400ms both; }
   #memusage-active { animation: getTaller 400ms both; }
   #memusage-used { animation: getTaller 400ms both; }
-}
-
-#memusage-active {
-  background-color: rgb(255, 178, 40);
-  height: 24px;
-  width: 0%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: getShorter 200ms both;
 }
 
 #swapusage-container {
