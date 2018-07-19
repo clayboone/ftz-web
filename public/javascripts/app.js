@@ -2,6 +2,7 @@
 (function appMain() {
     const memUsedTag = document.getElementById("memusage-used");
     const memActiveTag = document.getElementById("memusage-active");
+    const swapUsedTag = document.getElementById("swapusage-used");
     const xhttp = new XMLHttpRequest();
 
     xhttp.open('GET', '/api/meminfo');
@@ -12,6 +13,7 @@
 
         memUsedTag.style.width = meminfo.memUsedPercent.toString() + '%';
         memActiveTag.style.width = meminfo.memActivePercent.toString() + '%';
+        swapUsedTag.style.width = meminfo.swapUsedPercent.toString() + '%';
     };
 
     // Repeat
