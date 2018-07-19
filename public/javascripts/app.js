@@ -1,5 +1,9 @@
-// Run on page load
 (function appMain() {
+    displayMemUsage();
+    setTimeout(appMain, 2000);
+})();
+
+function displayMemUsage() {
     const memUsedTag = document.getElementById("memusage-used");
     const memActiveTag = document.getElementById("memusage-active");
     const swapUsedTag = document.getElementById("swapusage-used");
@@ -15,7 +19,4 @@
         memActiveTag.style.width = meminfo.memActivePercent.toString() + '%';
         swapUsedTag.style.width = meminfo.swapUsedPercent.toString() + '%';
     };
-
-    // Repeat
-    setTimeout(appMain, 2000);
-})();
+}
