@@ -12,7 +12,12 @@ router.get('/', function(req, res, next) {
  */
 router.get('/api/meminfo', (req, res, next) => {
   getMeminfo((meminfoObject) => {
-    res.send(JSON.stringify(meminfoObject));
+    // res.send(JSON.stringify(meminfoObject));
+    res.send(JSON.stringify({
+      memUsedPercent: (meminfoObject.MemTotal - meminfoObject.MemFree) / meminfoObject.MemTotal * 100,
+      memActivePercent: 20, //todo: math
+      swapUsedPercent: 10, //todo: math
+    }));
   });
 });
 

@@ -8,9 +8,8 @@
 
     xhttp.onreadystatechange = function() {
         const meminfo = JSON.parse(this.response);
-        const percentUsed = (meminfo.MemTotal - meminfo.MemFree) / meminfo.MemTotal * 100;
 
-        tag.style.width = percentUsed.toString() + '%';
+        tag.style.width = meminfo.memUsedPercent.toString() + '%';
     };
 
     // Repeat
