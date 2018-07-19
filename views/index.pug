@@ -3,10 +3,20 @@ extends layout
 block content
   .memory-box
     h3 Memory usage
-    p.info Physical:
+    .info
+      p.label Physical:
+      ul.legend
+        li.active Active
+        li.used Used
+        li.free Free
     #memusage-container
       #memusage-used
       #memusage-active
-    p.info Swap:
+    .info
+      p.label Swap:
+      ul.legend
+        li.used Used
+        li.free Free
+
     #swapusage-container
       #swapusage-used
