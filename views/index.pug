@@ -4,7 +4,11 @@ block content
   div.memory-box
     h3 Memory usage
     p Physical:
-      div.legend#memlegend
+      div.legend-container
+        ul.legend
+          li.active Active
+          li.used File Buffers & Cache
+          li.free Free
     div#memusage-container
       div#memusage-used
       div#memusage-active
