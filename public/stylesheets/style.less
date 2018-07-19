@@ -3,7 +3,6 @@ body {
   background-image: url("/images/tile-small.png");
   background-repeat: repeat;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
-
 }
 
 .memory-box {
@@ -25,9 +24,10 @@ body {
   width: 0%;
 }
 
-.clicked #memusage-used {
-  height: 45px;
-  animation: ease-in-out;
+.clicked {
+  #memusage-container { height: 50%; }
+  #memusage-active { height: 50%; }
+  #memusage-used { height: 45px; }
 }
 
 #memusage-active {
