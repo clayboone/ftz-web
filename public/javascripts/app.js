@@ -14,6 +14,7 @@
         memUsedTag.style.width = meminfo.memUsedPercent.toString() + '%';
         memActiveTag.style.width = meminfo.memActivePercent.toString() + '%';
         swapUsedTag.style.width = meminfo.swapUsedPercent.toString() + '%';
+        debugger;
     };
 
     // Repeat
