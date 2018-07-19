@@ -22,7 +22,6 @@ body {
   background-color: rgb(0, 183, 255);
   height: 24px;
   width: 0%;
-  animation: getTaller 2s;
 }
 
 @keyframes getTaller {
@@ -31,9 +30,9 @@ body {
 }
 
 .clicked {
-  #memusage-container { height: 95px; }
-  #memusage-active { height: 95px; }
-  #memusage-used { height: 95px; }
+  #memusage-container { animation: getTaller 2s; }
+  #memusage-active { animation: getTaller 2s; }
+  #memusage-used { animation: getTaller 2s; }
 }
 
 #memusage-active {
