@@ -1,3 +1,7 @@
+/**
+ * This is groundwork for what will later be an ability to use CSS
+ * animations to change the look of the app.
+ */
 function changeTheme() {
     const body = document.getElementsByTagName('body');
 
