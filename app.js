@@ -14,9 +14,11 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev', {
-  skip: (req, res) => { return res.statusCode < 400 }
-}));
+if (process.env.NODE_ENV !== 'production') {
+  app.use(logger('dev', {
+    skip: (req, res) => { return res.statusCode < 400 }
+  }));
+}
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
