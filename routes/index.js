@@ -57,12 +57,14 @@ function getProcstat(callback) {
       throw err;
     }
 
-    let result = {};
+    let result = [];
     data.toString().split('\n').forEach((line) => {
       const elements = line.split(/ +/).filter(Boolean);
-      
-      if (callback) callback(elements);
+
+      result.append(elements);
     });
+
+    if (callback) callback(result);
   });
 }
 
