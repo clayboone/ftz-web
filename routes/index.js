@@ -21,7 +21,9 @@ router.get('/api/meminfo', (req, res, next) => {
 });
 
 router.get('/api/stat', (req, res, next) => {
-  getProcstat();
+  getProcstat((result) => {
+    res.json(result);
+  });
 });
 
 /**
@@ -45,7 +47,7 @@ function getMeminfo(callback) {
       }
     });
 
-    callback(meminfoObject);
+    if (callback) callback(meminfoObject);
   });
 }
 
@@ -58,7 +60,8 @@ function getProcstat(callback) {
     let result = {};
     data.toString().split('\n').forEach((line) => {
       const elements = line.split(/ +/).filter(Boolean);
-      console.log(elements);
+      
+      if (callback) callback(elements);
     });
   });
 }
