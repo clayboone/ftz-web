@@ -1,7 +1,23 @@
 (function appMain() {
     displayMemUsage();
+    displayCpuUsage();
     setTimeout(appMain, 2000);
 })();
+
+function displayCpuUsage() {
+    const xhttp = new XMLHttpRequest();
+
+    xttp.open('GET', '/api/stat');
+    xttp.send();
+
+    xhttp.onreadystatechange = function () {
+        if (this.response) {
+            const stat = this.response;
+
+            console.log(stat);
+        }
+    }
+}
 
 function displayMemUsage() {
     const memUsedTag = document.getElementById("memusage-used");
