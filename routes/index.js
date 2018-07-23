@@ -63,7 +63,7 @@ function getProcstat(callback) {
     data.toString().split('\n').forEach((line) => {
       const elements = line.split(/ +/).filter(Boolean);
       
-      result += elements;
+      result.push(elements);
     });
 
     if (callback) callback(result);
