@@ -62,8 +62,8 @@ function getProcstat(callback) {
     // foreach? would .map().filter() be better?
     data.toString().split('\n').forEach((line) => {
       const elements = line.split(/ +/).filter(Boolean);
-      
-      result.push(elements);
+      if (elements.length > 0)
+        result.push(elements);
     });
 
     if (callback) callback(result);
