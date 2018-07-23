@@ -62,7 +62,7 @@ function getProcstat(callback) {
     // foreach? would .map().filter() be better?
     data.toString().split('\n').forEach((line) => {
       const elements = line.split(/ +/).filter(Boolean);
-      if (elements.length > 0 && elements[0].match(/cpu[0-9]+ /)) {
+      if (elements.length > 0 && elements[0].match(/cpu[0-9]+/)) {
         result.push(elements);
       }
     });
