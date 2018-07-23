@@ -7,8 +7,8 @@
 function displayCpuUsage() {
     const xhttp = new XMLHttpRequest();
 
-    xttp.open('GET', '/api/stat');
-    xttp.send();
+    xhttp.open('GET', '/api/stat');
+    xhttp.send();
 
     xhttp.onreadystatechange = function () {
         if (this.response) {
