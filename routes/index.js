@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
@@ -57,11 +58,12 @@ function getProcstat(callback) {
       throw err;
     }
 
-    let result = [];
+    let result = []; // this isn't in the scope of the forEach()
+    // foreach? would .map().filter() be better?
     data.toString().split('\n').forEach((line) => {
       const elements = line.split(/ +/).filter(Boolean);
-
-      result.append(elements);
+      
+      result += elements;
     });
 
     if (callback) callback(result);
