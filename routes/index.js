@@ -58,11 +58,11 @@ function getProcstat(callback) {
       throw err;
     }
 
-    let result = {};
+    let result = [];
     data.toString().split('\n').forEach((line) => {
       const elements = line.split(/ +/).filter(Boolean);
       if (elements.length > 0 && elements[0].match(/cpu[0-9]+/)) {
-        result[elements[0]] = elements.slice(1);
+        result.push(elements);
       }
     });
 
