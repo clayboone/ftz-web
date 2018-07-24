@@ -11,10 +11,12 @@ function displayCpuUsage() {
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
-        if (this.response) {
-            const stat = this.response;
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            if (this.response) {
+                const stat = this.response;
 
-            console.log(stat);
+                console.log(stat);
+            }
         }
     }
 }
