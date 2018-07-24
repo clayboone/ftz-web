@@ -31,12 +31,14 @@ function displayMemUsage() {
     xhttp.send();
 
     xhttp.onreadystatechange = function() {
-        if (this.response) {
-            const meminfo = JSON.parse(this.response);
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            if (this.response) {
+                const meminfo = JSON.parse(this.response);
 
-            memUsedTag.style.width = meminfo.memUsedPercent + '%';
-            memActiveTag.style.width = meminfo.memActivePercent + '%';
-            swapUsedTag.style.width = meminfo.swapUsedPercent + '%';
+                memUsedTag.style.width = meminfo.memUsedPercent + '%';
+                memActiveTag.style.width = meminfo.memActivePercent + '%';
+                swapUsedTag.style.width = meminfo.swapUsedPercent + '%';
+            }
         }
     };
 }
