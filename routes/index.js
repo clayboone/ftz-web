@@ -58,12 +58,11 @@ function getProcstat(callback) {
       throw err;
     }
 
-    let result = []; // this isn't in the scope of the forEach()
-    // foreach? would .map().filter() be better?
+    let result = {};
     data.toString().split('\n').forEach((line) => {
       const elements = line.split(/ +/).filter(Boolean);
       if (elements.length > 0 && elements[0].match(/cpu[0-9]+/)) {
-        result.push(elements);
+        result[elements[0]] = elements.slice(1);
       }
     });
 
