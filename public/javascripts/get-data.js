@@ -1,31 +1,32 @@
 (function appMain() {
-    displayMemUsage();
-    displayCpuUsage();
+    if (isShowing('mem-slide'))
+        displayMemUsage();
+    if (isShowing('cpu-slide'))
+        displayCpuUsage();
+    
+    function isShowing(id) {
+        return document
+            .getElementById(id)
+            .getAttribute('display') !== 'none';
+    }
+
     setTimeout(appMain, 2000);
 })();
 
 function displayCpuUsage() {
     const xhttp = new XMLHttpRequest();
 
-    if (cpuSlideIsDisplayed()) {
-        xhttp.open('GET', '/api/stat');
-        xhttp.send();
+    xhttp.open('GET', '/api/stat');
+    xhttp.send();
 
-        xhttp.onreadystatechange = function () {
-            if (xhttp.readyState === 4 && xhttp.status === 200) {
-                if (this.response) {
-                    const stat = this.response;
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            if (this.response) {
+                const stat = this.response;
 
-                    console.log(stat);
-                }
+                console.log(stat);
             }
         }
-    }
-
-    function cpuSlideIsDisplayed() {
-        return document
-            .getElementById('mem-slide')
-            .getAttribute('display') === 'block';
     }
 }
 
@@ -46,6 +47,7 @@ function displayMemUsage() {
                 memUsedTag.style.width = meminfo.memUsedPercent + '%';
                 memActiveTag.style.width = meminfo.memActivePercent + '%';
                 swapUsedTag.style.width = meminfo.swapUsedPercent + '%';
+                console.log('updated');
             }
         }
     };
