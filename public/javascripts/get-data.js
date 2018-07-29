@@ -7,17 +7,25 @@
 function displayCpuUsage() {
     const xhttp = new XMLHttpRequest();
 
-    xhttp.open('GET', '/api/stat');
-    xhttp.send();
+    if (cpuSlideIsDisplayed()) {
+        xhttp.open('GET', '/api/stat');
+        xhttp.send();
 
-    xhttp.onreadystatechange = function () {
-        if (xhttp.readyState === 4 && xhttp.status === 200) {
-            if (this.response) {
-                const stat = this.response;
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState === 4 && xhttp.status === 200) {
+                if (this.response) {
+                    const stat = this.response;
 
-                console.log(stat);
+                    console.log(stat);
+                }
             }
         }
+    }
+
+    function cpuSlideIsDisplayed() {
+        return document
+            .getElementById('mem-slide')
+            .getAttribute('display') === 'block';
     }
 }
 
