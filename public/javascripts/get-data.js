@@ -13,6 +13,10 @@
     setTimeout(appMain, 2000);
 })();
 
+function showMemSlide() {
+    document.getElementById('mem-slide').setAttribute('display') = 'block';
+}
+
 function displayCpuUsage() {
     const xhttp = new XMLHttpRequest();
 
