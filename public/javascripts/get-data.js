@@ -7,7 +7,7 @@
     function isShowing(id) {
         return document
             .getElementById(id)
-            .getAttribute('display') === 'none';
+            .getAttribute('display') === 'block';
     }
 
     setTimeout(appMain, 2000);
