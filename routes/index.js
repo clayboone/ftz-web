@@ -3,9 +3,12 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 
+const getTitle = require('../titles.js');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Fight the Zog" });
+  // res.render('index', { title: "Fight the Zog" });
+  res.render('index', { title: getTitle() });
 });
 
 /**
