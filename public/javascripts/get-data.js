@@ -7,14 +7,16 @@
     function isShowing(id) {
         return document
             .getElementById(id)
-            .getAttribute('display') === 'block';
+            // .getAttribute('display') === 'block';
+            .style['display'] !== 'none';
     }
 
     setTimeout(appMain, 2000);
 })();
 
 function showMemSlide() {
-    document.getElementById('mem-slide').parentElement.setAttribute('display', 'block');
+    // document.getElementById('mem-slide').parentElement.setAttribute('display', 'block');
+    document.getElementById('mem-slide').style['display'] = 'block'
 }
 
 function displayCpuUsage() {
