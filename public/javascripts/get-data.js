@@ -7,6 +7,7 @@
     function isShowing(id) {
         return document
             .getElementById(id)
+            .parentElement
             .getAttribute('display') === 'block';
     }
 
@@ -14,7 +15,7 @@
 })();
 
 function showMemSlide() {
-    document.getElementById('mem-slide').setAttribute('display', 'block');
+    document.getElementById('mem-slide').parentElement.setAttribute('display', 'block');
 }
 
 function displayCpuUsage() {
