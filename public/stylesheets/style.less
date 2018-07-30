@@ -13,6 +13,12 @@ main {
     background-color: white;
     padding: 15px;
     border: 1px solid black;
+    width: auto;
+
+    @media screen and (min-width: 768px) {
+      width: 80%;
+      margin: auto;
+    }
   }
 }
 
@@ -157,13 +163,14 @@ nav {
     color: dodgerblue;
     background-color: white;
     border-radius: 50%;
-
+    
     position: fixed;
     bottom: 30px;
     right: 30px;
-
+    
     i {
       box-shadow: 2px 2px rgba(21, 21, 21, 0.4);
+      border-radius: 50%;
     }
   }
 
