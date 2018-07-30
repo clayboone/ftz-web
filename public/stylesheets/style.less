@@ -1,116 +1,98 @@
 html {
-  // For sticking <footer> to bottom with less than 1vh of content
-  min-height: 645px;
-  position: relative;
+    // For sticking <footer> to bottom with less than 1vh of content
+    // update: doesn't look good with loading screen (or is too long on iphone 5 and smaller)
+    // min-height: 645px;
+    position: relative;
 }
 
 body {
-  padding: 0px;
-  margin: 0px;
-  background-image: url("/images/tile-small.png");
-  background-repeat: repeat;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
-  // margin-bottom: -100px;
-
-  a {
-    color: rgb(0, 183, 255);
-    text-decoration: none;
-  }
+    padding: 0px;
+    margin: 0px;
+    background-image: url("/images/tile-small.png");
+    background-repeat: repeat;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; // margin-bottom: -100px;
+    a {
+        color: rgb(0, 183, 255);
+        text-decoration: none;
+    }
 }
 
 main {
-  padding: 10px;
-
-  .content-container {
-    background-color: white;
-    padding: 15px;
-    border: 1px solid black;
-    width: auto;
-
-    @media screen and (min-width: 768px) {
-      width: 80%;
-      margin: auto;
+    padding: 10px;
+    .content-container {
+        background-color: white;
+        padding: 15px;
+        border: 1px solid black;
+        width: auto;
+        @media screen and (min-width: 768px) {
+            width: 80%;
+            margin: auto;
+        }
     }
-  }
 }
 
 header {
-  box-shadow: 1px 1px rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid black;
-
-  span {
-    overflow: hidden;
-    background-color: white;
-
-    display: flex;
-    flex-direction: row;
-
-    #title {
-      margin-left: 10px;
-      font-variant: small-caps;
-      font-weight: 1000;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid black;
+    span {
+        overflow: hidden;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        #title {
+            margin-left: 10px;
+            font-variant: small-caps;
+            font-weight: 1000;
+        }
     }
-
-  }
-
-  img.logo {
-    float: left;
-    height: 4em;
-    width: auto;
-    border-right: none;
-  }
+    img.logo {
+        float: left;
+        height: 4em;
+        width: auto;
+        border-right: none;
+    }
 }
 
 nav {
-  .btn-nav-container {
-    font-size: 3em;
-    color: dodgerblue;
-    
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    
-    i {
-      box-shadow: 2px 2px rgba(21, 21, 21, 0.4);
-      border-radius: 50%;
+    .btn-nav-container {
+        font-size: 3em;
+        color: dodgerblue;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        i {
+            box-shadow: 2px 2px rgba(21, 21, 21, 0.4);
+            border-radius: 50%;
+        }
     }
-  }
-
-  a:active {
-    bottom: 28px;
-    right: 28px;
-
-    i {
-      box-shadow: 0px 0px;
+    a:active {
+        bottom: 28px;
+        right: 28px;
+        i {
+            box-shadow: 0px 0px;
+        }
     }
-  }
 }
 
 footer {
-  background-color: rgba(21, 21, 21, 0.4);
-  width: 100%;
-  // height: 100px;
-  margin: 0px;
-  margin-top: 10px;
-  // position: absolute;
-  position: relative;
-  bottom: 0;
-
-
-  .flex-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    margin: auto;
-
-    p {
-      background-color: rgba(31, 31, 31, 0.5);
-      margin-left: 10px;
-      margin-right: 10px;
-      padding: 10px;
-      color: rgb(150, 150, 150);
+    background-color: rgba(21, 21, 21, 0.4);
+    width: 100%; // height: 100px;
+    margin: 0px;
+    margin-top: 10px; // position: absolute;
+    position: relative;
+    bottom: 0;
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        margin: auto;
+        p {
+            background-color: rgba(31, 31, 31, 0.5);
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            color: rgb(150, 150, 150);
+        }
     }
-  }
 }
