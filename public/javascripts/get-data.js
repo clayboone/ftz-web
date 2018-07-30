@@ -7,15 +7,22 @@
     function isShowing(id) {
         return document
             .getElementById(id)
-            // .getAttribute('display') === 'block';
             .style['display'] !== 'none';
     }
 
     setTimeout(appMain, 2000);
+
+    /******
+     ***** FIXME a few problems here..
+     *****  1) it does'nt work.. ish.. it does, but is displaying the wrong thing or nothing
+     *****  2) it's running anyways
+     *****  3) even if those two are resolved, the function needs to wait for setTimeout()
+     *****     to call it again before data shows up..
+     *****/
 })();
 
+// set up event handler when nav is put in.
 function showMemSlide() {
-    // document.getElementById('mem-slide').parentElement.setAttribute('display', 'block');
     document.getElementById('mem-slide').style['display'] = 'block'
 }
 
