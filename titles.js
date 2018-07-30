@@ -8,14 +8,15 @@ const titles = {
     'available': [
         'Fight The Zog',
         'Zog The Fight',
-        'Fighting the zog so you don\'t have to!',
-        'A fight to the zog',
+        'Fighting The Zog So You Don\'t Have To!',
+        'A Fight To The Zog',
         'Zog Fights Dot Com',
+        'Zight The Frog',
         '1,000 Zog-sized Fights',
         '1,000 Fight-sized Zogs',
     ],
     'considering': [
-        'Fight her right in the zog!',
+        'Fight Her Right In The Zog!',
     ]
 }
 
@@ -27,7 +28,7 @@ function randomTitle(useRiskyTitles = false) {
     let titleList = titles.available;
 
     if (useRiskyTitles) {
-        for (el of titles.considering) {
+        for (let el of titles.considering) {
             titleList.push(el);
         }
     }
