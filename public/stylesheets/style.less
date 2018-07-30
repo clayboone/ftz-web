@@ -16,16 +16,29 @@ a {
 }
 
 header {
-  overflow: hidden;
-  background-color: lightgray;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid black;
 
   span {
+    overflow: hidden;
+    background-color: white;
+
     display: flex;
     flex-direction: row;
+
+    .title {
+      margin-left: 10px;
+      font-variant: small-caps;
+      font-weight: 1000;
+    }
+
   }
 
   img.logo {
-    size: 16px 16px;
+    float: left;
+    height: 4em;
+    width: auto;
+    border-right: none;
   }
 }
 
@@ -139,7 +152,7 @@ nav {
     background-color: white;
     border-radius: 50%;
 
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     right: 30px;
 
