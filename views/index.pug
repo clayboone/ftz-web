@@ -1,32 +1,34 @@
 extends layout
 
 block content
-  .box-slide#mem-slide
-    h3 Memory usage
-    .info
-      p.label Physical Usage
-      ul.legend
-        li
-          .bullet.active
-          p Active
-        li
-          .bullet.used
-          p Used
-        li
-          .bullet.free
-          p Free
-    #memusage-container
-      #memusage-used
-      #memusage-active
-    .info
-      p.label Swap Space Usage
-      ul.legend
-        li
-          .bullet.used
-          p Used
-        li
-          .bullet.free
-          p Free
-    #swapusage-container
-      #swapusage-used
-  .box-slide#cpu-slide
+  #mem-slide
+    .box-slide
+      h3 Memory usage
+      .info
+        p.label Physical Usage
+        ul.legend
+          li
+            .bullet.active
+            p Active
+          li
+            .bullet.used
+            p Used
+          li
+            .bullet.free
+            p Free
+      #memusage-container
+        #memusage-used
+        #memusage-active
+      .info
+        p.label Swap Space Usage
+        ul.legend
+          li
+            .bullet.used
+            p Used
+          li
+            .bullet.free
+            p Free
+      #swapusage-container
+        #swapusage-used
+  #cpu-slide
+    .box-slide

@@ -37,7 +37,7 @@ function displayCpuUsage() {
             if (this.response) {
                 const stat = this.response;
 
-                console.log(stat);
+                // console.log(stat);
             }
         }
     }
@@ -60,7 +60,6 @@ function displayMemUsage() {
                 memUsedTag.style.width = meminfo.memUsedPercent + '%';
                 memActiveTag.style.width = meminfo.memActivePercent + '%';
                 swapUsedTag.style.width = meminfo.swapUsedPercent + '%';
-                console.log('updated');
             }
         }
     };

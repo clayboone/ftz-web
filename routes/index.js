@@ -11,22 +11,46 @@ router.get('/', function(req, res, next) {
 });
 
 /**
- * Get memory information, but not the entire object.
+ * Send some limited memory information to the client
  */
 router.get('/api/meminfo', (req, res, next) => {
-  getMeminfo((meminfoObject) => {
-    res.json({
-      memUsedPercent: ((meminfoObject.MemTotal - meminfoObject.MemFree) / meminfoObject.MemTotal * 100).toFixed(2),
-      memActivePercent: (meminfoObject['Active(anon)'] / meminfoObject.MemTotal * 100).toFixed(2),
-      swapUsedPercent: ((meminfoObject.SwapTotal - meminfoObject.SwapFree) / meminfoObject.SwapTotal * 100).toFixed(2)
+  if (process.env.NODE_ENV === "production") {
+    getMeminfo((meminfoObject) => {
+      res.json({
+        memUsedPercent: ((meminfoObject.MemTotal - meminfoObject.MemFree) / meminfoObject.MemTotal * 100).toFixed(2),
+        memActivePercent: (meminfoObject['Active(anon)'] / meminfoObject.MemTotal * 100).toFixed(2),
+        swapUsedPercent: ((meminfoObject.SwapTotal - meminfoObject.SwapFree) / meminfoObject.SwapTotal * 100).toFixed(2)
+      });
     });
-  });
+  } else {
+    res.json({
+      // Number.prototype.toFixed() returns a string (above), so send a string.
+      memUsedPercent: '22.5',
+      memActivePercent: '15',
+      swapUsedPercent: '80'
+    });
+  }
 });
 
+/**
+ * Send some limited CPU information to the client
+ */
 router.get('/api/stat', (req, res, next) => {
-  getProcstat((result) => {
-    res.json(result);
-  });
+  if (process.env.NODE_ENV === "production") {
+    getProcstat((result) => {
+      res.json(result);
+    });
+  } else {
+    res.json([
+      ["cpu","21059388","1141","143700","96372349","25706","0","4579","0","0","0"],
+      ["cpu0","2053112","301","20557","17527846","4417","0","668","0","0","0"],
+      ["cpu1","5088460","260","27436","14466600","3128","0","3394","0","0","0"],
+      ["cpu2","4078084","314","26010","15490226","3816","0","222","0","0","0"],
+      ["cpu3","4298255","128","22723","15280267","4098","0","58","0","0","0"],
+      ["cpu4","2659158","129","29229","16903938","4922","0","112","0","0","0"],
+      ["cpu5","2882316","6","17742","16703470","5324","0","124","0","0","0"]
+    ]);
+  }
 });
 
 /**
