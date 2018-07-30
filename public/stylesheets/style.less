@@ -1,3 +1,5 @@
+@logoColor: rgb(241, 159, 48);
+
 html {
     // For sticking <footer> to bottom with less than 1vh of content
     // update: doesn't look good with loading screen (or is too long on iphone 5 and smaller)
@@ -12,7 +14,7 @@ body {
     background-repeat: repeat;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; // margin-bottom: -100px;
     a {
-        color: rgb(0, 183, 255);
+        color: @logoColor;
         text-decoration: none;
     }
 }
@@ -57,7 +59,7 @@ header {
 nav {
     .btn-nav-container {
         font-size: 3em;
-        color: dodgerblue;
+        color: @logoColor;
         position: fixed;
         bottom: 30px;
         right: 30px;
