@@ -1,9 +1,13 @@
 body {
-  padding: 10px;
-  padding-top: 0px;
+  padding: 0px;
+  margin: 0px;
   background-image: url("/images/tile-small.png");
   background-repeat: repeat;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+main {
+  padding: 10px;
 }
 
 a {
@@ -12,9 +16,17 @@ a {
 }
 
 header {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
+  overflow: hidden;
+  background-color: lightgray;
+
+  span {
+    display: flex;
+    flex-direction: row;
+  }
+
+  img.logo {
+    size: 16px 16px;
+  }
 }
 
 .box-slide {
