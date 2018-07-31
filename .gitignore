@@ -63,8 +63,5 @@ typings/
 # vim
 *~
 
-# compiled CSS
-public/stylesheets/*.css
-
 # todo
 todo.md
