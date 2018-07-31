@@ -5,7 +5,7 @@
     height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
     p.title {
         font-variant: small-caps;
@@ -18,12 +18,13 @@
     }
     img {
         max-height: 50vh;
-        animation: zoomer;
+        animation: zoomer forwards 1200ms;
     }
 }
 
 @keyframes zoomer {
-    0% { transform: scale(1); }
-    50% { transform: scale(5); }
+    0% { transform: scale(0); }
+    25% { transform: scale(0); }
+    75% { transform: scale(1.5); }
     100% { transform: scale(1); }
 }
