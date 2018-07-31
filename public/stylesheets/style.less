@@ -1,18 +1,19 @@
 @logoColor: rgb(241, 159, 48);
 
 html {
-    // For sticking <footer> to bottom with less than 1vh of content
-    // update: doesn't look good with loading screen (or is too long on iphone 5 and smaller)
-    // min-height: 645px;
     position: relative;
+    height: 100%;
 }
 
 body {
+    height: 100%;
     padding: 0px;
     margin: 0px;
     background-image: url("/images/tile-small.png");
     background-repeat: repeat;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; // margin-bottom: -100px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
     a {
         color: @logoColor;
         text-decoration: none;
@@ -20,14 +21,16 @@ body {
 }
 
 main {
+    flex: 1 0 auto;
     padding: 10px;
     .content-container {
         background-color: white;
-        padding: 15px;
         border: 1px solid black;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+        padding: 15px 20px;
         width: auto;
         @media screen and (min-width: 768px) {
+            padding: 15px 50px;
             width: 80%;
             margin: auto;
         }
@@ -79,11 +82,11 @@ nav {
 
 footer {
     background-color: rgba(21, 21, 21, 0.4);
-    width: 100%; // height: 100px;
+    width: 100%;
     margin: 0px;
-    margin-top: 10px; // position: absolute;
+    margin-top: 10px;
     position: relative;
-    bottom: 0;
+    flex-shrink: 0;
     .flex-container {
         display: flex;
         flex-direction: row;
