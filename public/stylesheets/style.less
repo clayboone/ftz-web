@@ -1,5 +1,6 @@
 @logoColor: rgb(241, 159, 48);
 @textColor: rgb(10, 10, 10);
+@contentContainerColor: white;
 
 html {
     position: relative;
@@ -27,7 +28,7 @@ main {
     transform: translateY(-25px);
 
     .content-container {
-        background-color: white;
+        background-color: @contentContainerColor;
         border: 1px solid black;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
         padding: 15px 20px;
@@ -56,6 +57,11 @@ main {
                 font-weight: normal;
                 margin-top: 0;
             }
+        }
+        code {
+            background-color: darken(@contentContainerColor, 10%);
+            padding-left: 0.2em;
+            padding-right: 0.2em;
         }
     }
 }
@@ -125,10 +131,10 @@ footer {
             padding: 10px;
             color: rgb(150, 150, 150);
             :first-child {
-                padding-top: 10px;
+                // padding-top: 5px;
             }
             a {
-                padding-top: 2px;
+                padding-top: 8px;
                 padding-bottom: 2px;
                 display: block;
             }

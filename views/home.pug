@@ -11,11 +11,19 @@ block content
                 p Since this site can be run as an app on Android and iOS, I'll be implementing a back button inside of the navigation arrow in the bottom-right corner of the screen. When the nav icon is clicked, it should animate somehow (currently, it acts like a button and depresses, but it's really just a shadow effect because HTML buttons aren't very nice) and slide out more options.
             li Stats, Chats & Prats
                 p The other elements in the navigation menu. These elements should slide or pop out from the button and overlay the contents of whatever page you're currently on. When you click one of them, another slide should happen with more specific pages that can be browsed to.
+                p "Stats" will be server info stats (like RAM and CPU usage) for checking if it's "the server" causing lag spikes in a fairly simple manner.
+                p "Chats" will be a web interface for chatting to players in-game - for logged in users. If a web user is not logged in, it will just display the game chat.
+                p "Prats" will be a list of the whitelisted players and links to their personal pages, where they can write posts/updates about their builds or what they did in a challenge or whatever they want to talk about.
             li A Decent Footer
                 p Getting the footer to stick normally to the bottom of the page was more difficult than it needed to be. I want to make use of this space a few different ways. Maybe adding the current world type and/or modpack we're playing, as well as ways to contact admins, very general in-game info (like number of players online), and a link to install the site as a PWA on mobile devices.
-            li Loggin in
+            li Logging in
                 p Obviously sites can be much more functional when you have the ability to log in. At first, I'll probably hard code some users for me, the owner and maybe one of the players. But really, I'd like for any website visitor to be able to log in to post comments on whatever they see here.
             li Notifications
                 P Since I'm building this site as a PWA, it would make sense to add a service worker for "installed" versions of the app to periodically check for any updates to the site - like when players join the game, when players start chatting to each other, when a post is made (like the one you're reading), or when the (logged-in) user's name is mentioned.
-            li Tage, Authors and Everything Else
+            li Tags, Authors and Times
                 p Posts like this one generally have meta-elements to them, like tags, authors, dates & times and infomation about the last update or last time the post was edited. I think info like that would be useful and add some more flair to the site overall as well.
+            li Deployment
+                p A really useful feature from a development standpoint would be automatically updating the production server from my personal laptop/development machine. I'd like to be able to #[code git push] in the master branch after merging some feature I've worked on. That should run some git hook on the server to automatically pull the new changes and run them in production.
+            li Development
+                p Another handy ability that I might work on before the database is even up is the ability to render post, article or update content from Markdown files or Markdown sections of JSON files containing the posts.
+        P In short, I have many plans for the development of this website/web app. I've even considered making a sort of voting system on posts, not completely unlike the one #[a(href="https://reddit.com") reddit] uses. But a) this would take a very long time and b) we could just make our own subreddit instead and link to it from here - and here from there.
