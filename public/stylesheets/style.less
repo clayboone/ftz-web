@@ -1,4 +1,5 @@
 @logoColor: rgb(241, 159, 48);
+@textColor: rgb(10, 10, 10);
 
 html {
     position: relative;
@@ -37,6 +38,17 @@ main {
             width: 65%;
             margin: auto;
             margin-bottom: 1.2em;
+        }
+        .heading {
+            font-size: 1.8em;
+            font-weight: 700;
+            font-variant: small-caps;
+        }
+        .subheading {
+            font-size: 1.3em;
+            font-weight: 600;
+            font-style: italic;
+            color: lighten(@textColor, 40%);
         }
     }
 }
