@@ -117,12 +117,21 @@ footer {
         flex-wrap: nowrap;
         overflow: hidden;
         margin: auto;
-        p {
+        > p {
+            min-width: 5em; /* todo: make flex stretch i guess */
             background-color: rgba(31, 31, 31, 0.5);
             margin-left: 10px;
             margin-right: 10px;
             padding: 10px;
             color: rgb(150, 150, 150);
+            :first-child {
+                padding-top: 10px;
+            }
+            a {
+                padding-top: 2px;
+                padding-bottom: 2px;
+                display: block;
+            }
         }
     }
 }
