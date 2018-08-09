@@ -57,6 +57,12 @@ main {
                 font-weight: normal;
                 margin-top: 0;
             }
+            &.done {
+                color: lighten(@textColor, 45%);
+                > p {
+                    color: lighten(@textColor, 65%);
+                }
+            }
         }
         code {
             background-color: darken(@contentContainerColor, 10%);
